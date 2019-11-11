@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MoviedbService } from 'src/app/services/moviedb.service';
-import { AccessibilityService } from 'src/app/layout/accessibility.service';
 import { ModalDirective } from 'ngx-bootstrap/modal';
-import {NgbModal, ModalDismissReasons, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
+import { AccessibilityService } from 'src/app/services/accessibility.service';
 
 @Component({
   selector: 'app-movies',
