@@ -14,6 +14,8 @@ export class MoviesComponent implements OnInit {
 
   title;
   overview;
+  imgMovie;
+  popularity;
   rows: Array<any> = [];
   movies: Array<any> = [];
   genres: Array<any> = [];
@@ -55,9 +57,10 @@ export class MoviesComponent implements OnInit {
   openDetails(content, movie){
     this.title = movie.title;
     this.overview = movie.overview;
+    this.popularity = movie.popularity;
+    this.imgMovie = "http://image.tmdb.org/t/p/w185/" + movie.poster_path;
     this.modalService.open(content, this.modalOptions).result.then((result) => {
     }, (reason) => {
-      console.log('a')
     });
   }
 
