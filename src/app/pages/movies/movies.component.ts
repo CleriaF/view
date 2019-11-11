@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MoviedbService } from 'src/app/services/moviedb.service';
-import { DomSanitizer } from '@angular/platform-browser';
-import { MovieService } from './movie.service';
 import { AccessibilityService } from 'src/app/layout/accessibility.service';
+import { ModalDirective } from 'ngx-bootstrap/modal';
+import {NgbModal, ModalDismissReasons, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-movies',
@@ -12,11 +12,15 @@ import { AccessibilityService } from 'src/app/layout/accessibility.service';
 })
 export class MoviesComponent implements OnInit {
 
+  title;
+  overview;
   rows: Array<any> = [];
   movies: Array<any> = [];
   genres: Array<any> = [];
+  modalOptions:NgbModalOptions;
+  @ViewChild('modal', {static: true}) public modal: ModalDirective;
 
-  constructor(private http: HttpClient, private config: MoviedbService, private sanitizer: DomSanitizer, private accessibility: AccessibilityService) { }
+  constructor(private http: HttpClient, private config: MoviedbService, private accessibility: AccessibilityService, private modalService: NgbModal) { }
 
   getGenres(){
     this.http.get<any>(this.config.app.urlBase.concat('genre/movie/list' + this.config.app.apiKey), { observe: 'response' })
@@ -46,6 +50,15 @@ export class MoviesComponent implements OnInit {
       return row.title.toLowerCase().indexOf(value) !== -1 || !value;
     });
     this.movies = temp;
+  }
+
+  openDetails(content, movie){
+    this.title = movie.title;
+    this.overview = movie.overview;
+    this.modalService.open(content, this.modalOptions).result.then((result) => {
+    }, (reason) => {
+      console.log('a')
+    });
   }
 
   ngOnInit() {

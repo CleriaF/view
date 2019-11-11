@@ -161,10 +161,6 @@ body {
     text-align: left;
   }
   
-  .info-section:last-of-type {
-    text-align: right;
-  }
-  
   .info-section label {
     display: block;
     color: rgba(0, 0, 0, 0.5);

@@ -9,17 +9,20 @@
 		<ul class="navbar-nav ml-auto">
 		</ul>
 		<ul>
-			<button (click)="this.accessibility.changeFont('+')" mat-icon-button color="primary" aria-label="Example icon-button with a heart icon">
+			<button (click)="this.accessibility.changeFont('+')" mat-icon-button color="primary"
+				aria-label="Example icon-button with a heart icon">
 				<mat-icon>zoom_in</mat-icon>
 			</button>
 		</ul>
 		<ul>
-			<button (click)="this.accessibility.changeFont('-')" mat-icon-button color="primary" aria-label="Example icon-button with a heart icon">
+			<button (click)="this.accessibility.changeFont('-')" mat-icon-button color="primary"
+				aria-label="Example icon-button with a heart icon">
 				<mat-icon>zoom_out</mat-icon>
 			</button>
 		</ul>
 		<ul>
-			<button (click)="this.accessibility.changeContraste()" mat-icon-button color="primary" aria-label="Example icon-button with a heart icon">
+			<button (click)="this.accessibility.changeContraste()" mat-icon-button color="primary"
+				aria-label="Example icon-button with a heart icon">
 				<mat-icon>invert_colors</mat-icon>
 			</button>
 		</ul>
@@ -54,28 +57,23 @@
 		<!--movie-header-->
 		<div class="movie-content">
 			<div class="movie-content-header">
-				<a href="#">
+				<a href="#" (click)="openDetails(mymodal, movie)">
 					<h3 class="movie-title">{{movie.title}}</h3>
 				</a>
-				<!-- <div class="imax-logo"></div> -->
 			</div>
 			<div class="movie-info">
 				<div class="info-section">
 					<label>Lançamento</label>
 					<span>{{movie.release_date | date:'dd-MM-yyyy'}}</span>
 				</div>
-				<!--date,time-->
 				<div class="info-section">
-					<label>Votação</label>
-					<span>{{movie.vote_average}} <mat-icon aria-hidden="false"></mat-icon>
-					</span>
+					<label>Média</label>
+					<span style="text-align: center;">{{movie.vote_average}}</span>
 				</div>
-				<!--row-->
-				<div class="info-section">
+				<!-- <div class="info-section">
 					<label>Detalhes</label>
 					<button type="button" class="btn btn-link-dark btn-sm">Ver</button>
-				</div>
-				<!--seat-->
+				</div> -->
 			</div>
 		</div>
 		<!--movie-content-->
@@ -83,3 +81,18 @@
 	<!--movie-card-->
 </div>
 <!--container-->
+
+<ng-template #mymodal let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">{{title}}</h4>
+		<button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-body">
+		{{overview}}
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+	</div>
+</ng-template>
