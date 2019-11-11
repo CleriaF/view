@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MoviedbService } from 'src/app/services/moviedb.service';
+import { MovieService } from 'src/app/pages/movies/movie.service';
 
 @Component({
   selector: 'app-top-navbar',
@@ -11,13 +12,20 @@ export class TopNavbarComponent implements OnInit {
 
   genres: Array<any> = [];
 
-  constructor(private http: HttpClient, private config: MoviedbService) { }
+  constructor(private http: HttpClient, private config: MoviedbService, private service: MovieService) { }
 
+
+  filter(id){
+    this.service.filterGenre(id);
+  }
+
+  filterName(name){
+    this.service.filterName(name);
+  }
   
   getGenres(){
     this.http.get<any>(this.config.app.urlBase.concat('genre/movie/list' + this.config.app.apiKey), { observe: 'response' })
       .subscribe(resp => {
-        console.log(resp.body)
         this.genres = resp.body.genres;
       });
   }

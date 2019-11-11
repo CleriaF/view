@@ -1,0 +1,87 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@for $i from 0 to 9 {
+    .f#{$i} {
+        font-size: #{0.60+($i/10)}rem;
+        .navbar-brand {
+            font-size: #{0.85+($i/10)}rem; // 1.25
+        }
+        .dropdown-item {
+            font-size: #{0.60+($i/10)}rem; // 1.00
+        }
+        h1 {
+            font-size: #{1.60+($i/10)}rem; // 1.25
+        }
+        h2 {
+            font-size: #{1.60+($i/10)}rem; // 1.75
+        }
+        h3 {
+            font-size: #{1.60+($i/10)}rem; // 1.75
+        }
+        h5 {
+            font-size: #{0.85+($i/10)}rem; // 0.83
+        }
+        p {
+          font-size: #{0.85+($i/10)}rem; // 0.83
+        }
+        footer {
+            font-size: #{8+$i}px !important; // 12
+        }
+        span {
+            font-size: #{0.85+($i/10)}rem; // 1.25
+        }
+        label {
+            font-size: #{0.85+($i/10)}rem; // 1.25
+        }
+    }
+  }
+
+  .contrast {
+    background-color: black;
+
+    a, h5, input, div, .badge, .bg-dark {
+        background-color: black !important;
+        color: white !important;
+    }
+
+    .page-item.active .page-link {
+        border-color: white !important;
+        background: black;
+    }
+
+    button {
+        background: black;
+        color: yellow;
+        border: 1px solid white;
+    }
+    button:hover {
+        background: black;
+        color: yellow;
+        border: 1px solid yellow;
+    }
+    
+    
+    .dropdown-item {
+        background-color: black;
+        color: yellow !important;
+        border: 1px solid white;
+    }
+    a:hover {
+        border: 1px solid yellow;
+    }
+
+    img, .card {
+        border: 1px solid white;
+    }
+    .card:hover {
+        border: 1px solid yellow;
+    }
+
+    .navbar {
+        border-bottom: 1px solid white;
+    }
+    footer {
+        border-top: 1px solid white;
+    }
+}
+
