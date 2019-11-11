@@ -47,7 +47,7 @@
 <div class="container">
 	<div class="movie-card" *ngFor="let movie of movies">
 		<div class="movie-header img-fluid" style="text-align: center;">
-			<img src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}">
+			<img src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}" alt="Poster do filme {{movie.title}}">
 			<div class="header-icon-container">
 				<a href="#">
 					<i class="material-icons header-icon"></i>
@@ -70,17 +70,10 @@
 					<label>Média</label>
 					<span style="text-align: center;">{{movie.vote_average}}</span>
 				</div>
-				<!-- <div class="info-section">
-					<label>Detalhes</label>
-					<button type="button" class="btn btn-link-dark btn-sm">Ver</button>
-				</div> -->
 			</div>
 		</div>
-		<!--movie-content-->
 	</div>
-	<!--movie-card-->
 </div>
-<!--container-->
 
 <ng-template #mymodal let-modal>
 	<div class="modal-header">

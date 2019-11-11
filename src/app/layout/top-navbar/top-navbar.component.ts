@@ -13,15 +13,6 @@ export class TopNavbarComponent implements OnInit {
   genres: Array<any> = [];
 
   constructor(private http: HttpClient, private config: MoviedbService, private service: MovieService) { }
-
-
-  filter(id){
-    this.service.filterGenre(id);
-  }
-
-  filterName(name){
-    this.service.filterName(name);
-  }
   
   getGenres(){
     this.http.get<any>(this.config.app.urlBase.concat('genre/movie/list' + this.config.app.apiKey), { observe: 'response' })
