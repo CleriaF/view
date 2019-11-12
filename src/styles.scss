@@ -39,7 +39,7 @@
   .contrast {
     background-color: black;
 
-    a, h5, input, div, .badge, .bg-dark {
+    a, h5, h4, input {
         background-color: black !important;
         color: white !important;
     }
@@ -60,12 +60,6 @@
         border: 1px solid yellow;
     }
     
-    
-    .dropdown-item {
-        background-color: black;
-        color: yellow !important;
-        border: 1px solid white;
-    }
     a:hover {
         border: 1px solid yellow;
     }
@@ -80,20 +74,54 @@
     .navbar {
         border-bottom: 1px solid white;
     }
+
     .bg-light{
         background-color: black !important;
     }
+
     footer {
         border-top: 1px solid white;
     }
-    .span {
-        color: white !important;
-    }
+
     .mat-form-field-underline{
         background-color: white !important;
     }
+
     .mat-form-field-label {
         color: white !important;
     }
+
+    .mat-button-wrapper {
+        color: white;
+    }
+
+    .movie-card {
+        background: black !important;
+    }
+
+    .label, p {
+        color: white !important;
+    }
+
+    .movie-info {
+        color: white !important;
+    }
+
+    .info-section label {
+        color: white !important;
+    }
+
+    .modal-body {
+        background-color: black !important;
+    }
+
+    .modal-header {
+        background-color: black !important;
+    }
+
+    .modal-footer {
+        background-color: black !important;
+    }
+
 }
 
