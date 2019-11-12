@@ -171,7 +171,15 @@ body {
   .info-section span {
     font-weight: 700;
     font-size: 11px;
-  }
+  } 
+
+  .fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+}
   
   @media screen and (max-width: 500px) {
     .movie-card {

@@ -4,28 +4,28 @@
     .f#{$i} {
         font-size: #{0.60+($i/10)}rem;
         .navbar-brand {
-            font-size: #{0.85+($i/10)}rem; // 1.25
+            font-size: #{0.85+($i/10)}rem;
         }
         .dropdown-item {
-            font-size: #{0.60+($i/10)}rem; // 1.00
+            font-size: #{0.60+($i/10)}rem;
         }
         h1 {
-            font-size: #{1.60+($i/10)}rem; // 1.25
+            font-size: #{1.60+($i/10)}rem;
         }
         h2 {
-            font-size: #{1.60+($i/10)}rem; // 1.75
+            font-size: #{1.60+($i/10)}rem;
         }
         h3 {
-            font-size: #{1.60+($i/10)}rem; // 1.75
+            font-size: #{1.60+($i/10)}rem;
         }
         h5 {
-            font-size: #{0.85+($i/10)}rem; // 0.83
+            font-size: #{0.85+($i/10)}rem;
         }
         p {
-          font-size: #{0.85+($i/10)}rem; // 0.83
+          font-size: #{0.85+($i/10)}rem;
         }
         footer {
-            font-size: #{8+$i}px !important; // 12
+            font-size: #{8+$i}px !important;
         }
         span {
             font-size: #{0.85+($i/10)}rem; // 1.25

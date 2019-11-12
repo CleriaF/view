@@ -11,19 +11,22 @@
 		<ul>
 			<button (click)="this.accessibility.changeFont('+')" mat-icon-button color="primary"
 				aria-label="Example icon-button with a heart icon">
-				<mat-icon>zoom_in</mat-icon>
+				<!-- <mat-icon>zoom_in</mat-icon> -->
+				A+
 			</button>
 		</ul>
 		<ul>
 			<button (click)="this.accessibility.changeFont('A')" mat-icon-button color="primary"
 				aria-label="Example icon-button with a heart icon">
-				<mat-icon>settings_backup_restore</mat-icon>
+				<!-- <mat-icon>settings_backup_restore</mat-icon> -->
+				A
 			</button>
 		</ul>
 		<ul>
 			<button (click)="this.accessibility.changeFont('-')" mat-icon-button color="primary"
 				aria-label="Example icon-button with a heart icon">
-				<mat-icon>zoom_out</mat-icon>
+				<!-- <mat-icon>zoom_out</mat-icon> -->
+				A-
 			</button>
 		</ul>
 		<ul>
@@ -36,7 +39,7 @@
 			<mat-form-field>
 				<mat-label>Categorias</mat-label>
 				<mat-select>
-					<mat-option *ngFor="let genre of genres" (click)="filterGenre(genre.id)">
+					<mat-option *ngFor="let genre of genres" (click)="filterGenre(genre.id)" [value]="genre.name">
 						{{genre.name}}
 					</mat-option>
 				</mat-select>
