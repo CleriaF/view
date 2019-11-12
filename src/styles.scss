@@ -28,10 +28,10 @@
             font-size: #{8+$i}px !important;
         }
         span {
-            font-size: #{0.85+($i/10)}rem; // 1.25
+            font-size: #{0.85+($i/10)}rem;
         }
         label {
-            font-size: #{0.85+($i/10)}rem; // 1.25
+            font-size: #{0.85+($i/10)}rem;
         }
     }
   }
@@ -121,6 +121,18 @@
 
     .modal-footer {
         background-color: black !important;
+    }
+
+    .mat-option {
+        color: yellow;
+    }
+
+    .mat-select-panel {
+        background-color: black;
+    }
+
+    .mat-select-value {
+        color: white !important;
     }
 
 }
