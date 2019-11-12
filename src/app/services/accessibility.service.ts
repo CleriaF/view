@@ -30,7 +30,7 @@ export class AccessibilityService {
     } else if (op === '-' && this.fonte > 0) {
       this.fonte = this.fonte - 1;
     } else if (op === 'A') {
-      this.fonte = 4;
+      this.fonte = 2;
     }
 
     document.body.classList.add(this.fontClass[this.fonte]);
