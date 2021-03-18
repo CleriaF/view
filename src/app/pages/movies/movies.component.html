@@ -1,54 +1,16 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-	<a class="navbar-brand" href="#">Catálogo de Filmes</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-		aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav ml-auto">
-		</ul>
-		<ul>
-			<button (click)="this.accessibility.changeFont('+')" mat-icon-button color="primary"
-				aria-label="Aumentar fonte">
-				A+
-			</button>
-		</ul>
-		<ul>
-			<button (click)="this.accessibility.changeFont('A')" mat-icon-button color="primary"
-				aria-label="Restaurar fonte">
-				A
-			</button>
-		</ul>
-		<ul>
-			<button (click)="this.accessibility.changeFont('-')" mat-icon-button color="primary"
-				aria-label="Diminuir fonte">
-				A-
-			</button>
-		</ul>
-		<ul>
-			<button (click)="this.accessibility.changeContraste()" mat-icon-button color="primary"
-				aria-label="Alto contraste">
-				<mat-icon>invert_colors</mat-icon>
-			</button>
-		</ul>
-		<ul>
-			<mat-form-field>
-				<mat-label>Categorias</mat-label>
-				<mat-select>
-					<mat-option (click)="allMovies()">Todos</mat-option>
-					<mat-option *ngFor="let genre of genres" (click)="filterGenre(genre.id)" [value]="genre.name">
-						{{genre.name}}
-					</mat-option>
-				</mat-select>
-			</mat-form-field>
-		</ul>
-		<ul>
-			<mat-form-field class="example-full-width">
-				<input (keyup)="applyFilter($event)" matInput placeholder="Buscar por nome...">
-			</mat-form-field>
-		</ul>
-	</div>
+  <div style="text-align: center !important; margin: auto;">
+    <a class="navbar-brand" href="#">
+      <img height="100" width="200" src="assets/divas.jpeg">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<!--      <ul>-->
+<!--        <mat-form-field class="example-full-width">-->
+<!--          <input (keyup)="applyFilter($event)" matInput placeholder="Buscar por nome...">-->
+<!--        </mat-form-field>-->
+<!--      </ul>-->
+    </div>
+  </div>
 </nav>
 
 <div class="container">

@@ -19,10 +19,13 @@ export class MoviesComponent implements OnInit {
   rows: Array<any> = [];
   movies: Array<any> = [];
   genres: Array<any> = [];
-  modalOptions:NgbModalOptions;
+  modalOptions: NgbModalOptions;
   @ViewChild('modal', {static: true}) public modal: ModalDirective;
 
-  constructor(private http: HttpClient, private config: MoviedbService, private accessibility: AccessibilityService, private modalService: NgbModal) { }
+  clothes = [];
+
+  constructor(private http: HttpClient, private config: MoviedbService, private accessibility: AccessibilityService,
+              private modalService: NgbModal) { }
 
   getGenres(){
     this.http.get<any>(this.config.app.urlBase.concat('genre/movie/list' + this.config.app.apiKey), { observe: 'response' })
@@ -36,14 +39,15 @@ export class MoviesComponent implements OnInit {
       .subscribe(resp => {
         this.rows = resp.body.results;
         this.movies = this.rows;
-      })
+      });
   }
 
   filterGenre(id: number){
-    this.http.get<any>(this.config.app.urlBase.concat('discover/movie' + this.config.app.apiKey + '&with_genres=' + id), {observe: 'response'})
+    this.http.get<any>(this.config.app.urlBase.concat('discover/movie' + this.config.app.apiKey + '&with_genres=' + id),
+      {observe: 'response'})
       .subscribe(resp => {
         this.movies = resp.body.results;
-      })
+      });
   }
 
   applyFilter(event) {
